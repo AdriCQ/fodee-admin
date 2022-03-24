@@ -1,5 +1,5 @@
 <template>
-  <q-card>
+  <q-card class="text-grey-9">
     <q-form @submit.prevent="onSubmit">
       <q-card-section>
         <div class="text-h6 text-center">Cambiar Contraseña</div>
@@ -24,10 +24,10 @@
       <q-card-actions>
         <q-btn
           color="primary"
-          text-color="dark"
-          icon="mdi-lock"
+          icon="mdi-check"
           label="Guardar"
           type="submit"
+          class="full-width"
         />
       </q-card-actions>
     </q-form>

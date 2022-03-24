@@ -79,7 +79,7 @@ async function loadEvents() {
     events.value = resp.data;
     console.log('loadEvents', resp.data);
   } catch (error) {
-    console.log(error);
+    notificationHelper.axiosError(error, []);
   }
 }
 /**

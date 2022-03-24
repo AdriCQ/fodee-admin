@@ -1,6 +1,6 @@
 import { api } from 'src/boot/axios';
 import { ref, InjectionKey } from 'vue';
-import { IConfig } from './types';
+import { IConfig, IImage } from './types';
 /**
  * @class ConfigInjectable
  */
@@ -53,6 +53,18 @@ class ConfigInjectable {
   async update(c: Partial<IConfig>) {
     const resp = await api.patch<IConfig>('/config', c);
     this.config = resp.data;
+  }
+  /**
+   * -----------------------------------------
+   *	Images
+   * -----------------------------------------
+   */
+  /**
+   * listImages
+   * @returns
+   */
+  async listImages() {
+    return api.get<IImage[]>('images');
   }
 }
 

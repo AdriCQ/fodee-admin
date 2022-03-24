@@ -13,6 +13,8 @@
 
     <q-tabs align="left">
       <q-route-tab :to="{ name: ROUTE_NAME.MAIN }" label="Pedidos" />
+      <q-route-tab :to="{ name: ROUTE_NAME.DISH_LIST }" label="Menu" />
+      <q-route-tab :to="{ name: ROUTE_NAME.EVENT_LIST }" label="Eventos" />
       <q-route-tab :to="{ name: ROUTE_NAME.CONFIG }" label="Configuración" />
     </q-tabs>
   </q-header>

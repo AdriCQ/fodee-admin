@@ -1,3 +1,5 @@
+import { DataBase } from 'src/types';
+
 export interface IConfig {
   title: string;
   home_subtitle: string;
@@ -19,4 +21,10 @@ export interface IConfig {
   social_in: string | null;
   social_yt: string | null;
   social_tw: string | null;
+}
+
+export interface IImage extends DataBase {
+  path: string;
+  tag: string;
+  title: string;
 }

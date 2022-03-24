@@ -1,7 +1,7 @@
 <template>
   <q-card>
     <q-card-section class="text-center text-grey-9">
-      <div class="text-body1">Configurar Contacto</div>
+      <div class="text-h6 text-center">Configurar Contacto</div>
     </q-card-section>
     <q-form @submit.prevent="onSubmit">
       <q-card-section class="q-gutter-y-sm">

@@ -14,6 +14,8 @@ import {
   _event,
   _config,
   $configInjectable,
+  _dish,
+  $dishInjectable,
 } from 'src/modules';
 /**
  * App
@@ -25,6 +27,7 @@ export default defineComponent({
     provide(_config, $configInjectable);
     provide(userInjectionKey, userStore);
     provide(_event, $event);
+    provide(_dish, $dishInjectable);
   },
 });
 </script>

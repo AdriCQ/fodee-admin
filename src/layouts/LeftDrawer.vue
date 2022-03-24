@@ -46,6 +46,21 @@
           </q-item-section>
         </q-item>
 
+        <q-item clickable v-ripple :to="{ name: ROUTE_NAME.DISH_LIST }">
+          <q-item-section avatar top>
+            <q-avatar
+              size="md"
+              icon="mdi-food"
+              color="primary"
+              text-color="dark"
+            />
+          </q-item-section>
+
+          <q-item-section class="text-grey-9">
+            <q-item-label lines="1">Menu</q-item-label>
+          </q-item-section>
+        </q-item>
+
         <q-item clickable v-ripple :to="{ name: ROUTE_NAME.CONFIG }">
           <q-item-section avatar top>
             <q-avatar

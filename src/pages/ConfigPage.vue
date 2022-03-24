@@ -1,16 +1,36 @@
 <template>
   <q-page padding>
-    <div class="row q-col-gutter-sm">
-      <div class="col-xs-12 col-sm-6 col-md-4">
-        <config-contact-form />
-      </div>
-      <div class="col-xs-12 col-sm-6 col-md-4">
-        <config-social-form />
-      </div>
-      <div class="col-xs-12 col-md-4">
-        <config-subtitles-form />
-      </div>
-    </div>
+    <q-tabs v-model="tab" class="bg-primary" align="justify" narrow-indicator>
+      <q-tab name="contact" label="Contacto" />
+      <q-tab name="password" label="Seguridad" />
+      <q-tab name="social" label="Redes Sociales" />
+      <q-tab name="texts" label="Textos" />
+      <q-tab name="images" label="Imagenes" />
+    </q-tabs>
+
+    <q-separator />
+
+    <q-tab-panels v-model="tab" animated>
+      <q-tab-panel name="contact">
+        <config-contact-form style="max-width: 25rem" />
+      </q-tab-panel>
+
+      <q-tab-panel name="password">
+        <change-password style="max-width: 25rem" />
+      </q-tab-panel>
+
+      <q-tab-panel name="social">
+        <config-social-form style="max-width: 45rem" />
+      </q-tab-panel>
+
+      <q-tab-panel name="texts">
+        <config-subtitles-form style="max-width: 50rem" />
+      </q-tab-panel>
+
+      <q-tab-panel name="images">
+        <config-images-form />
+      </q-tab-panel>
+    </q-tab-panels>
   </q-page>
 </template>
 
@@ -18,4 +38,8 @@
 import ConfigSubtitlesForm from 'src/components/forms/ConfigSubtitlesForm.vue';
 import ConfigContactForm from 'src/components/forms/ConfigContactForm.vue';
 import ConfigSocialForm from 'src/components/forms/ConfigSocialForm.vue';
+import ChangePassword from 'src/components/forms/ChangePassword.vue';
+import ConfigImagesForm from 'src/components/forms/ConfigImages.vue';
+import { ref } from 'vue';
+const tab = ref('contact');
 </script>

@@ -16,7 +16,7 @@ if (!process.env.DEV) {
     _baseURL = location.origin;
   }
 }
-export const baseURL = _baseURL;
+const baseURL = _baseURL;
 
 const api = axios.create({
   baseURL: `${baseURL}/api`,
@@ -55,4 +55,4 @@ export default boot(({ app }) => {
   app.config.globalProperties.$api = api;
 });
 
-export { api };
+export { api, baseURL };
