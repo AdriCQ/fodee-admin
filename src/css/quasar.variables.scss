@@ -1,0 +1,21 @@
+$primary: #fea500;
+$secondary: #26a69a;
+$accent: #ffb846;
+
+$dark: #1d1d1d;
+
+$positive: #21ba45;
+$negative: #c10015;
+$info: #027be3;
+$warning: #f2c037;
+
+$theme: (
+    "primary": $primary,
+    "secondary": $secondary,
+    "accent": $accent,
+    "dark": $dark,
+    "positive": $positive,
+    "negative": $negative,
+    "info": $info,
+    "warning": $warning,
+);
