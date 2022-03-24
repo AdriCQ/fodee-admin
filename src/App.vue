@@ -12,6 +12,8 @@ import {
   userStore,
   $event,
   _event,
+  _config,
+  $configInjectable,
 } from 'src/modules';
 /**
  * App
@@ -20,6 +22,7 @@ export default defineComponent({
   name: 'App',
   setup() {
     provide(appInjectionKey, appStore);
+    provide(_config, $configInjectable);
     provide(userInjectionKey, userStore);
     provide(_event, $event);
   },

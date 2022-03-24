@@ -11,23 +11,17 @@
   </q-layout>
 </template>
 
-<script lang="ts">
-import { defineComponent, onBeforeMount } from 'vue';
+<script setup lang="ts">
 import AppHeader from './Header.vue';
 import LeftDrawer from './LeftDrawer.vue';
+import { injectStrict, _config } from 'src/modules';
+import { notificationHelper } from 'src/helpers';
+
 /**
- * MainLayout Component
+ * -----------------------------------------
+ *	Init
+ * -----------------------------------------
  */
-export default defineComponent({
-  name: 'MainLayout',
-  components: {
-    AppHeader,
-    LeftDrawer,
-  },
-  setup() {
-    onBeforeMount(() => {
-      // TODO: Load config
-    });
-  },
-});
+const $config = injectStrict(_config);
+$config.load().catch((_e) => notificationHelper.axiosError(_e, []));
 </script>

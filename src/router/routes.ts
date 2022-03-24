@@ -18,6 +18,11 @@ const routes: RouteRecordRaw[] = [
         component: () => import('pages/Index.vue'),
       },
       {
+        name: ROUTE_NAME.CONFIG,
+        path: 'config',
+        component: () => import('pages/ConfigPage.vue'),
+      },
+      {
         name: ROUTE_NAME.COMMENT_LIST,
         path: 'comments',
         component: () => import('pages/CommentsPage.vue'),

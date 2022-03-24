@@ -17,6 +17,8 @@ export function injectStrict<T>(key: InjectionKey<T>, fallback?: T) {
  * App Module
  */
 export * from './app/store';
+export * from './config/injectable';
+export * from './config/types';
 /**
  * Event module
  */

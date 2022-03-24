@@ -2,6 +2,7 @@
  * @enum ROUTE_NAME
  */
 export enum ROUTE_NAME {
+  CONFIG = 'CONFIG',
   COMMENT_LIST = 'COMMENT.LIST',
   DISH_LIST = 'DISH.LIST',
   EVENT_LIST = 'EVENT.LIST',
