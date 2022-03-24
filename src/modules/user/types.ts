@@ -5,8 +5,6 @@ import { DataBase } from 'src/types';
 export interface IUserProfile extends DataBase {
   name: string;
   email: string;
-  phone?: string;
-  type: 'ADMIN' | 'RASTREO' | 'CONTACTO' | 'VENTAS';
 }
 /**
  * Iuser login

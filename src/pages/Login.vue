@@ -1,6 +1,6 @@
 <template>
   <q-page class="row justify-center items-center">
-    <q-card style="width: 90%; max-width: 25rem;" bordered>
+    <q-card style="width: 90%; max-width: 25rem" bordered>
       <q-card-section>
         <div class="text-h6 text-center text-grey-9">Iniciar</div>
       </q-card-section>
@@ -33,8 +33,8 @@ import { defineComponent, ref } from 'vue';
 import { useRouter } from 'vue-router';
 import { injectStrict, IUserLogin, userInjectionKey } from 'src/modules';
 import { ROUTE_NAME } from 'src/router';
-import { cryptHash, uiHelper } from 'src/helpers';
-import { useQuasar } from 'quasar';
+import { cryptHash } from 'src/helpers';
+import { notificationHelper } from 'src/helpers';
 /**
  * AuthLoginPage
  */
@@ -43,12 +43,10 @@ export default defineComponent({
   setup() {
     const $user = injectStrict(userInjectionKey);
     const $router = useRouter();
-    const $q = useQuasar();
-    const { errorHandler } = uiHelper($q, $router);
 
     const form = ref<IUserLogin>({
       email: '',
-      password: ''
+      password: '',
     });
     const loading = ref(false);
 
@@ -56,21 +54,29 @@ export default defineComponent({
       loading.value = true;
       const password = cryptHash(form.value.password);
       console.log(password);
-      $user.loginAction({
-        email: form.value.email,
-        password
-      })
-        .then(() => {
-          void $router.push({ name: ROUTE_NAME.MAIN })
+      $user
+        .loginAction({
+          email: 'admin@admin.com',
+          password,
         })
-        .catch(_e => { errorHandler(_e, 'No podemos validar sus credenciales') })
-        .finally(() => { loading.value = false; })
+        .then(() => {
+          void $router.push({ name: ROUTE_NAME.MAIN });
+        })
+        .catch((_e) => {
+          notificationHelper.axiosError(_e, [
+            'No podemos validar sus credenciales',
+          ]);
+        })
+        .finally(() => {
+          loading.value = false;
+        });
     }
 
     return {
-      form, loading, onSubmit
-    }
-  }
-
+      form,
+      loading,
+      onSubmit,
+    };
+  },
 });
 </script>

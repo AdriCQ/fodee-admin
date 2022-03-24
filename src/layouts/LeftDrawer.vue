@@ -18,7 +18,12 @@
         <!-- Mis Pedidos -->
         <q-item clickable v-ripple :to="{ name: ROUTE_NAME.MAIN }">
           <q-item-section avatar top>
-            <q-avatar size="md" icon="mdi-cart-outline" color="primary" text-color="dark" />
+            <q-avatar
+              size="md"
+              icon="mdi-cart-outline"
+              color="primary"
+              text-color="dark"
+            />
           </q-item-section>
 
           <q-item-section class="text-grey-9">
@@ -26,51 +31,29 @@
           </q-item-section>
         </q-item>
         <!-- / Mis Pedidos -->
-        <q-item clickable v-ripple :to="{ name: ROUTE_NAME.PRODUCTS }">
+        <q-item clickable v-ripple :to="{ name: ROUTE_NAME.EVENT_LIST }">
           <q-item-section avatar top>
-            <q-avatar size="md" icon="mdi-cube" color="primary" text-color="dark" />
+            <q-avatar
+              size="md"
+              icon="mdi-cube"
+              color="primary"
+              text-color="dark"
+            />
           </q-item-section>
 
           <q-item-section class="text-grey-9">
-            <q-item-label lines="1">Productos</q-item-label>
-          </q-item-section>
-        </q-item>
-        <!-- Mis Marcadores -->
-        <q-item clickable v-ripple :to="{ name: ROUTE_NAME.DESTINATIONS }">
-          <q-item-section avatar top>
-            <q-avatar size="md" icon="mdi-map-marker-outline" color="primary" text-color="dark" />
-          </q-item-section>
-
-          <q-item-section class="text-grey-9">
-            <q-item-label lines="1">Destinos</q-item-label>
-          </q-item-section>
-        </q-item>
-
-        <!-- Profile -->
-        <q-item clickable v-ripple :to="{ name: ROUTE_NAME.USERS }">
-          <q-item-section avatar top>
-            <q-avatar size="md" icon="mdi-account-multiple" color="primary" text-color="dark" />
-          </q-item-section>
-
-          <q-item-section class="text-grey-9">
-            <q-item-label lines="1">Colaboradores</q-item-label>
-          </q-item-section>
-        </q-item>
-        <!-- / Profile -->
-
-        <q-item clickable v-ripple :to="{ name: ROUTE_NAME.CONFIG }">
-          <q-item-section avatar top>
-            <q-avatar size="md" icon="mdi-wrench" color="primary" text-color="dark" />
-          </q-item-section>
-
-          <q-item-section class="text-grey-9">
-            <q-item-label lines="1">Ajustes</q-item-label>
+            <q-item-label lines="1">Eventos</q-item-label>
           </q-item-section>
         </q-item>
 
         <q-item clickable v-ripple @click="logout">
           <q-item-section avatar top>
-            <q-avatar size="md" icon="mdi-exit-to-app" color="primary" text-color="dark" />
+            <q-avatar
+              size="md"
+              icon="mdi-exit-to-app"
+              color="primary"
+              text-color="dark"
+            />
           </q-item-section>
 
           <q-item-section class="text-grey-9">
@@ -83,7 +66,7 @@
   </q-drawer>
 </template>
 
-<script lang='ts'>
+<script lang="ts">
 import { appInjectionKey, userInjectionKey, injectStrict } from 'src/modules';
 import { computed, defineComponent } from 'vue';
 import { useRouter } from 'vue-router';
@@ -111,18 +94,23 @@ export default defineComponent({
     /**
      * updateSidebarOpen
      */
-    function updateSidebarOpen(_open: boolean) { App.leftDrawer = _open }
+    function updateSidebarOpen(_open: boolean) {
+      App.leftDrawer = _open;
+    }
     function logout() {
       $user.logout();
-      void $router.push({ name: ROUTE_NAME.LOGIN })
+      void $router.push({ name: ROUTE_NAME.LOGIN });
     }
 
     return {
       // Data
-      sidebarOpen, ROUTE_NAME, userProfile,
+      sidebarOpen,
+      ROUTE_NAME,
+      userProfile,
       // Methods
-      updateSidebarOpen, logout
-    }
+      updateSidebarOpen,
+      logout,
+    };
   },
 });
 </script>

@@ -6,11 +6,11 @@ import { InjectionKey, inject } from 'vue';
  * @returns Provided value for that key
  */
 export function injectStrict<T>(key: InjectionKey<T>, fallback?: T) {
-    const resolved = inject(key, fallback);
-    if (!resolved) {
-        throw new Error(`Could not resolve ${key.toString()}`)
-    }
-    return resolved;
+  const resolved = inject(key, fallback);
+  if (!resolved) {
+    throw new Error(`Could not resolve ${key.toString()}`);
+  }
+  return resolved;
 }
 
 /**
@@ -18,13 +18,12 @@ export function injectStrict<T>(key: InjectionKey<T>, fallback?: T) {
  */
 export * from './app/store';
 /**
- * Shop Module
+ * Event module
  */
-export * from './shop/store';
-export * from './shop/types';
-export * from './shop/service';
+export * from './event/injectable';
+export * from './event/types';
 /**
- * 
+ *
  */
 export * from './user/store';
 export * from './user/service';
