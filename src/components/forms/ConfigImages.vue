@@ -24,6 +24,7 @@
         </div>
       </div>
     </q-card-section>
+    <!-- Popup -->
     <q-dialog v-model="popup" v-if="fullImage">
       <div style="width: 80%">
         <q-img
@@ -51,11 +52,13 @@
               label="Cambiar Imagen"
               accept=".jpg, image/*"
               @rejected="onUploadReject"
+              @uploaded="onUploaded"
             />
           </div>
         </q-img>
       </div>
     </q-dialog>
+    <!-- / Popup -->
   </q-card>
 </template>
 
@@ -118,7 +121,10 @@ function factoryFn() {
     }, 200);
   });
 }
-
+function onUploaded() {
+  void loadImages();
+  popup.value = false;
+}
 function onUploadReject(rejectedEntries: unknown) {
   console.log(rejectedEntries);
   $q.notify({

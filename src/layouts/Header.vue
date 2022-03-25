@@ -11,8 +11,8 @@
       </q-toolbar-title>
     </q-toolbar>
 
-    <q-tabs align="left">
-      <q-route-tab :to="{ name: ROUTE_NAME.MAIN }" label="Pedidos" />
+    <q-tabs align="left" v-if="!$q.platform.is.mobile">
+      <!-- <q-route-tab :to="{ name: ROUTE_NAME.MAIN }" label="Pedidos" /> -->
       <q-route-tab :to="{ name: ROUTE_NAME.DISH_LIST }" label="Menu" />
       <q-route-tab :to="{ name: ROUTE_NAME.EVENT_LIST }" label="Eventos" />
       <q-route-tab :to="{ name: ROUTE_NAME.CONFIG }" label="Configuración" />

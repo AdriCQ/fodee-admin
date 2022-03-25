@@ -20,6 +20,7 @@ export * from './app/store';
 /**
  * Config
  */
+export * from './comment/injectable';
 export * from './config/injectable';
 export * from './config/types';
 /**

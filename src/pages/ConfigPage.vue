@@ -1,7 +1,7 @@
 <template>
   <q-page padding>
     <q-tabs v-model="tab" class="bg-primary" align="justify" narrow-indicator>
-      <q-tab name="contact" label="Contacto" />
+      <q-tab name="contact" label="Sitio" />
       <q-tab name="password" label="Seguridad" />
       <q-tab name="social" label="Redes Sociales" />
       <q-tab name="texts" label="Textos" />

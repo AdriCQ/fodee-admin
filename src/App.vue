@@ -13,6 +13,8 @@ import {
   $event,
   _event,
   _config,
+  _comment,
+  $commentInjectable,
   $configInjectable,
   _dish,
   $dishInjectable,
@@ -25,6 +27,7 @@ export default defineComponent({
   setup() {
     provide(appInjectionKey, appStore);
     provide(_config, $configInjectable);
+    provide(_comment, $commentInjectable);
     provide(userInjectionKey, userStore);
     provide(_event, $event);
     provide(_dish, $dishInjectable);
