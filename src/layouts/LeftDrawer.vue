@@ -27,7 +27,7 @@
           </q-item-section>
 
           <q-item-section class="text-grey-9">
-            <q-item-label lines="1">Pedidos</q-item-label>
+            <q-item-label lines="1">Reservas</q-item-label>
           </q-item-section>
         </q-item>
         <!-- / Mis Pedidos -->
