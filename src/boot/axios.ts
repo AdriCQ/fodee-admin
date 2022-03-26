@@ -26,7 +26,6 @@ const api = axios.create({
 
 export default boot(({ app }) => {
   userStore.load();
-  console.log({ profile: userStore.profile, apiToken: userStore.apiToken });
   /**
    * Api request Interceptor
    */
@@ -35,7 +34,6 @@ export default boot(({ app }) => {
     if (!(_request.headers as IDictionary)['Content-Type']) {
       (_request.headers as IDictionary)['Content-Type'] = 'application/json';
     }
-
     /* Check if authorization is set */
     if (!(_request.headers as IDictionary)['Authorization']) {
       /* Check if the user is authenticated to send Bearer token */

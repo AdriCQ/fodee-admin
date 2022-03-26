@@ -26,7 +26,7 @@
     </q-card>
     <q-dialog v-model="eventModal">
       <event-form
-        style="min-width: 20rem"
+        style="min-width: 25rem"
         :event="updateEvent"
         :mode="formType"
         @created="onCreated"
@@ -77,7 +77,6 @@ async function loadEvents() {
   try {
     const resp = await $event.list();
     events.value = resp.data;
-    console.log('loadEvents', resp.data);
   } catch (error) {
     notificationHelper.axiosError(error, []);
   }
@@ -87,7 +86,6 @@ async function loadEvents() {
  * @param e
  */
 function onCreated(e: IEvent) {
-  console.log('onCreated', e);
   events.value.unshift(e);
   notificationHelper.success(['Evento Creado']);
   eventModal.value = false;
@@ -106,7 +104,6 @@ function onRemove(id: number) {
  * @param e
  */
 function onUpdated(e: IEvent) {
-  console.log('onUpdated', e);
   const index = events.value.findIndex((_e) => _e.id === e.id);
   events.value[index] = e;
 
@@ -122,6 +119,5 @@ function update(event: IEvent) {
   formType.value = 'update';
   updateEvent.value = event;
   eventModal.value = true;
-  console.log('update', event);
 }
 </script>

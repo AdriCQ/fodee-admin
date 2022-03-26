@@ -10,8 +10,12 @@ class DishInjectable {
    * @param dish
    * @returns
    */
-  async create(dish: IDish) {
-    return api.post<IDish>('dishes', dish);
+  async create(dish: IDish | FormData) {
+    return api.post<IDish>('dishes', dish, {
+      headers: {
+        'content-type': 'multipart/form-data',
+      },
+    });
   }
   /**
    * list
@@ -33,8 +37,12 @@ class DishInjectable {
    * @param id
    * @returns
    */
-  async update(id: number, dish: IDish) {
-    return api.patch(`dishes/${id}`, dish);
+  async update(id: number, dish: IDish | FormData) {
+    return api.post(`dishes/${id}`, dish, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    });
   }
 }
 

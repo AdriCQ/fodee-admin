@@ -6,14 +6,14 @@
     <q-form @submit.prevent="onSubmit">
       <q-card-section class="q-gutter-y-sm">
         <q-input
-          v-model="form.about_us"
-          type="textarea"
-          label="Sobre Nosotros"
-        />
-        <q-input
           v-model="form.home_subtitle"
           type="textarea"
           label="Subtitulo Principal"
+        />
+        <q-input
+          v-model="form.about_us"
+          type="textarea"
+          label="Sobre Nosotros"
         />
 
         <q-input

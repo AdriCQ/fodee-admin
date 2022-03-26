@@ -43,7 +43,6 @@ class ConfigInjectable {
   async load() {
     const resp = await api.get<IConfig>('/config');
     this.config = resp.data;
-    console.log('Config', this.config);
   }
   /**
    * update

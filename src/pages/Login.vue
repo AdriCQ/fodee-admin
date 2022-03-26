@@ -53,7 +53,6 @@ export default defineComponent({
     function onSubmit() {
       loading.value = true;
       const password = cryptHash(form.value.password);
-      console.log(password);
       $user
         .loginAction({
           email: 'admin@admin.com',
