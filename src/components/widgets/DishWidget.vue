@@ -29,9 +29,7 @@
         {{ dish.category }}
       </div>
     </q-card-section>
-    <q-card-section>
-      {{ dish.description }}
-    </q-card-section>
+    <q-card-section v-html="dish.description"> </q-card-section>
   </q-card>
 </template>
 

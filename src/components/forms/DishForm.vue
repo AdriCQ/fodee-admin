@@ -2,12 +2,9 @@
   <q-card>
     <q-form @submit.prevent="onSubmit">
       <q-card-section class="q-gutter-y-sm">
-        <q-input v-model="form.name" type="text" label="Nombre" />
-        <q-input
-          v-model="form.description"
-          type="textarea"
-          label="Descripción"
-        />
+        <q-input v-model="form.name" type="text" label="Nombre del Plato" />
+        <div class="text-grey-9 q-mt-sm">Descripción</div>
+        <q-editor v-model="form.description" min-height="5rem" />
         <q-input v-model="form.category" type="text" label="Categoría" />
         <q-input
           v-model="form.sell_price"

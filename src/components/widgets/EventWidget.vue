@@ -5,19 +5,19 @@
         <q-icon name="mdi-delete" />
       </div>
       <q-chip
-        class="glossy cursor-pointer"
+        class="glossy"
         size="sm"
         :icon="`mdi-${$props.event.enable ? 'check' : 'cancel'}`"
         :color="`${$props.event.enable ? 'positive' : 'negative'}`"
         text-color="white"
         :label="`${$props.event.enable ? 'Habilitado' : 'Deshabilitado'}`"
       />
-      <div @click="$emits('click-action')">
+      <div @click="$emits('click-action')" class="cursor-pointer">
         <div class="text-h6">{{ $props.event.title }}</div>
         <div class="text-subtitle2">{{ $props.event.date }}</div>
       </div>
     </q-card-section>
-    <q-card-section @click="$emits('click-action')">
+    <q-card-section @click="$emits('click-action')" class="cursor-pointer">
       {{ $props.event.description }}
     </q-card-section>
   </q-card>

@@ -51,7 +51,9 @@
               :url="`${baseURL}/api/images/${fullImage.id}`"
               label="Cambiar Imagen"
               accept=".jpg, image/*"
+              @factory-failed="factoryFailed"
               @rejected="onUploadReject"
+              @failed="onUploadReject"
               @uploaded="onUploaded"
             />
           </div>
@@ -105,6 +107,7 @@ async function loadImages() {
 function factoryFn() {
   return new Promise((resolve) => {
     setTimeout(() => {
+      console.log('baseUrl', `${baseURL}/api/images/`);
       resolve({
         url: `${baseURL}/api/images/${
           (fullImage.value as IImage).id as number
@@ -120,6 +123,9 @@ function factoryFn() {
       });
     }, 200);
   });
+}
+function factoryFailed(evt: unknown) {
+  console.log('factory Failed', evt);
 }
 function onUploaded() {
   void loadImages();
