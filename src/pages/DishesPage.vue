@@ -27,7 +27,7 @@
     </q-card>
     <q-dialog v-model="popup">
       <dish-form
-        style="min-width: 25rem"
+        style="min-width: 20rem"
         :dish="selectedDish"
         :key="`popup-${selectedDish?.id}`"
         @dish-created="onCreated"

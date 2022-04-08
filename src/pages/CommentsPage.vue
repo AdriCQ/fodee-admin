@@ -27,7 +27,7 @@
 
     <q-dialog v-model="popup">
       <comment-form
-        style="min-width: 25rem"
+        style="min-width: 20rem"
         @create-comment="onCommentCreated"
       />
     </q-dialog>

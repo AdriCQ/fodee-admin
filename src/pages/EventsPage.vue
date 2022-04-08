@@ -26,7 +26,7 @@
     </q-card>
     <q-dialog v-model="eventModal">
       <event-form
-        style="min-width: 25rem"
+        style="min-width: 20rem"
         :event="updateEvent"
         :mode="formType"
         @created="onCreated"

@@ -31,6 +31,7 @@
           :src="`${baseURL}/${fullImage.path}`"
           spinner-color="primary"
           spinner-size="1rem"
+          v-if="!changeImage"
         >
           <div
             class="absolute-bottom text-subtitle1 text-center"
@@ -44,20 +45,21 @@
               @click="changeImage = true"
             />
           </div>
-          <div class="absolute-center" v-if="changeImage">
-            <q-uploader
-              style="min-width: 15rem"
-              :factory="factoryFn"
-              :url="`${baseURL}/api/images/${fullImage.id}`"
-              label="Cambiar Imagen"
-              accept=".jpg, image/*"
-              @factory-failed="factoryFailed"
-              @rejected="onUploadReject"
-              @failed="onUploadReject"
-              @uploaded="onUploaded"
-            />
-          </div>
         </q-img>
+
+        <div class="full-width" v-else>
+          <q-uploader
+            style="width: 100%"
+            :factory="factoryFn"
+            :url="`${baseURL}/api/images/${fullImage.id}`"
+            label="Cambiar Imagen"
+            accept=".jpg, image/*"
+            @factory-failed="factoryFailed"
+            @rejected="onUploadReject"
+            @failed="onUploadReject"
+            @uploaded="onUploaded"
+          />
+        </div>
       </div>
     </q-dialog>
     <!-- / Popup -->
