@@ -18,7 +18,7 @@ class NotificationHelper {
     if (error.response) {
       if (error.response.status === 401) {
         $user.logout();
-        void $router.push({ name: ROUTE_NAME.MAIN });
+        void $router.push({ name: ROUTE_NAME.LOGIN });
         this.error(['No podemos verificar sus credenciales']);
         return;
       }
